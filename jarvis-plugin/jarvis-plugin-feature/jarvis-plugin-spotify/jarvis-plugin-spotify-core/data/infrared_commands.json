@@ -1,0 +1,26 @@
+[
+	{
+		"actions": ["MUTE", "UNMUTE"],
+		"commands": [
+			{"context": "SOUND", "action": "MUTE"}
+		]
+	},
+	{
+		"actions": ["START", "STOP"],
+		"commands": [
+			{"context": "SOUND", "action": "POWER"}
+		]
+	},
+	{
+		"actions": ["VOLUME_UP"],
+		"commands": [
+			{"context": "SOUND", "action": "VOLUME_UP"}
+		]
+	},
+	{
+		"actions": ["VOLUME_DOWN"],
+		"commands": [
+			{"context": "SOUND", "action": "VOLUME_DOWN"}
+		]
+	}
+]

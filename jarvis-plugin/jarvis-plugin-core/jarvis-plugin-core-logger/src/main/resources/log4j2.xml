@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="JarvisConfiguration">
+  
+  <!-- The classLoaderName will be set programmatically -->
+  
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [${classLoaderName}] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    
+    <RollingFile name="RollingClassLoaderFile" fileName="logs/${classLoaderName}.log" filePattern="logs/backup/${classLoaderName}-%i.log">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [${classLoaderName}] %-5level %logger{36} - %msg%n"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="5MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="2"/>
+    </RollingFile>
+    
+    <RollingFile name="RollingFile" fileName="logs/global.log" filePattern="logs/backup/global-%i.log">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [${classLoaderName}] %-5level %logger{36} - %msg%n"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="5MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="2"/>
+    </RollingFile>
+
+  </Appenders>
+  
+  <Loggers>
+  	<Logger name="com.gguproject.jarvis" level="DEBUG" additivity="false">
+  		<AppenderRef ref="Console"/>
+      	<AppenderRef ref="RollingClassLoaderFile"/>
+      	<AppenderRef ref="RollingFile"/>
+  	</Logger>
+
+    <Root level="ERROR">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="RollingClassLoaderFile"/>
+      <AppenderRef ref="RollingFile"/>
+    </Root>
+  </Loggers>
+</Configuration>

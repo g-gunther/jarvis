@@ -1,0 +1,65 @@
+{
+  "data": {
+    "playlist": [
+      "fourre tout",
+      "légende du rock"
+    ]
+  },
+  "actions": {
+    "START": [
+      "allume"
+    ],
+    "STOP": [
+      "éteint",
+      "stop",
+      "arrête"
+    ],
+    "VOLUME_UP": [
+      "monte son"
+    ],
+    "VOLUME_DOWN": [
+      "baisse son"
+    ],
+    "MUTE": [
+      "éteint son",
+      "coupe son"
+    ],
+    "UNMUTE": [
+      "mets son"
+    ],
+    "SET": [
+      "mets"
+    ]
+  },
+  "contexts": [
+    {
+      "type": "MUSIC",
+      "words": [
+        "musique",
+        "playlist"
+      ],
+      "actions": [
+        "START",
+        "STOP",
+        "VOLUME_UP",
+        "VOLUME_DOWN",
+        "MUTE",
+        "UNMUTE",
+        {
+          "action": "SET",
+          "data": [
+            "playlist"
+          ]
+        }
+      ]
+    }, {
+      "type": "ALL",
+      "words": [
+        "tout"
+      ],
+      "actions": [
+        "STOP"
+      ]
+    }
+  ]
+}

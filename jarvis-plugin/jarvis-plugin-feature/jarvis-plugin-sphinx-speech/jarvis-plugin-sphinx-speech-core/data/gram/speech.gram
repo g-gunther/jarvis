@@ -1,0 +1,54 @@
+#JSGF V1.0;
+grammar speech;
+<keyword> = jarvis;
+
+<data_numbers> = un | deux | trois | quatre | cinq | six | sept | huit | neuf | zéro | dix | onze | douze | treize | quatorze | quinze | seize | dix-sept | dix-huit | dix-neuf | vingt | vingt-deux | vingt-quatre | cinquante;
+<data_tv_channel> = bfm | bfmtv | c8 | tf1 | m6 | w9 | tmc | nrj12 | arte | france2 | france3 | 6ter | RMCdécouverte | gameone;
+<data_playlist> = fourre tout;
+<data_time_unit> = minute | heure;
+
+<localization> = chambre | salon | cuisine;
+
+<action_START> = allume;
+<action_STOP> = éteint | stop | arrête;
+<action_VOLUME_UP> = monte son;
+<action_VOLUME_DOWN> = baisse son;
+<action_MUTE> = éteint son | coupe son;
+<action_UNMUTE> = mets son;
+<action_SET> = mets;
+
+<TV_words> = télé | télévision | tv;
+<TV_action_START> = <action_START> [<TV_words>];
+<TV_action_STOP> = <action_STOP> [<TV_words>];
+<TV_action_VOLUME_UP> = <action_VOLUME_UP> [<TV_words>];
+<TV_action_VOLUME_DOWN> = <action_VOLUME_DOWN> [<TV_words>];
+<TV_action_MUTE> = <action_MUTE> [<TV_words>];
+<TV_action_UNMUTE> = <action_UNMUTE> [<TV_words>];
+<TV_action_SET> = <action_SET> [<TV_words>] (<data_numbers> | <data_tv_channel>);
+<TV> = <TV_action_START> | <TV_action_STOP> | <TV_action_VOLUME_UP> | <TV_action_VOLUME_DOWN> | <TV_action_MUTE> | <TV_action_UNMUTE> | <TV_action_SET>;
+
+<MUSIC_words> = musique | playlist;
+<MUSIC_action_START> = <action_START> [<MUSIC_words>];
+<MUSIC_action_STOP> = <action_STOP> [<MUSIC_words>];
+<MUSIC_action_VOLUME_UP> = <action_VOLUME_UP> [<MUSIC_words>];
+<MUSIC_action_VOLUME_DOWN> = <action_VOLUME_DOWN> [<MUSIC_words>];
+<MUSIC_action_MUTE> = <action_MUTE> [<MUSIC_words>];
+<MUSIC_action_UNMUTE> = <action_UNMUTE> [<MUSIC_words>];
+<MUSIC_action_SET> = <action_SET> [<MUSIC_words>] (<data_playlist> | <TV_words>);
+<MUSIC> = <MUSIC_action_START> | <MUSIC_action_STOP> | <MUSIC_action_VOLUME_UP> | <MUSIC_action_VOLUME_DOWN> | <MUSIC_action_MUTE> | <MUSIC_action_UNMUTE> | <MUSIC_action_SET>;
+
+<LIGHT_words> = lumière;
+<LIGHT_action_START> = <action_START> [<LIGHT_words>];
+<LIGHT_action_STOP> = <action_STOP> [<LIGHT_words>];
+<LIGHT_action_SET> = <action_SET> [<LIGHT_words>];
+<LIGHT> = <LIGHT_action_START> | <LIGHT_action_STOP> | <LIGHT_action_SET>;
+
+<SELF_words> = toi;
+<SELF_action_STOP> = <action_STOP> [<SELF_words>];
+<SELF> = <SELF_action_STOP>;
+
+<ALL_words> = tout;
+<ALL_action_STOP> = <action_STOP> [<ALL_words>];
+<ALL> = <ALL_action_STOP>;
+
+public <speech> = <keyword> (<TV> | <MUSIC> | <LIGHT> | <SELF> | <ALL>) [<localization>];

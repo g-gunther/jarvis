@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gguproject.jarvis</groupId>
+        <artifactId>jarvis-app</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jarvis-app-loader</artifactId>
+    <packaging>jar</packaging>
+
+    <name>jarvis-app-loader</name>
+
+    <properties>
+        <output.name>${project.name}</output.name>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-core-dependencies</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-core-repository</artifactId>
+        </dependency>
+
+        <!-- Has to be at the top level to be shared by all plugins since this app is loaded in the parent class loader-->
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-core-spi</artifactId>
+        </dependency>
+
+        <!-- No other dependencies else they will be loaded in the main class loader and shared by all plugins-->
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>publish</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.gguproject.jarvis</groupId>
+                        <artifactId>jarvis-data-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-app-assembly</id>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,69 @@
+[
+	{
+		"actions": ["MUTE", "UNMUTE"],
+		"commands": [
+			{
+				"type": "INFRARED",
+				"events": [{"context": "SOUND", "action": "MUTE"}]
+			}
+		]
+	},
+	{
+		"actions": ["START"],
+		"commands": [
+			{
+				"type": "INFRARED",
+				"events": [
+					{"context": "TV", "action": "POWER"},
+					{"context": "GENERAL", "action": "SLEEP", "properties": {"duration": "2000"}},
+					{"context": "SOUND", "action": "POWER"}
+				]
+			}, {
+				"type": "FREEBOXV6",
+				"events": [
+					{"action": "POWER_ON"}
+				]
+			}
+		]
+	},
+	{
+		"actions": ["STOP"],
+		"commands": [
+			{
+				"type": "INFRARED",
+				"events": [
+					{"context": "TV", "action": "POWER"},
+					{"context": "GENERAL", "action": "SLEEP", "properties": {"duration": "2000"}},
+					{"context": "SOUND", "action": "POWER"}
+				]
+			}, {
+				"type": "FREEBOXV6",
+				"events": [
+					{"action": "POWER_OFF"}
+				]
+			}
+		]
+	},
+	{
+		"actions": ["VOLUME_UP"],
+		"commands": [
+			{
+				"type": "INFRARED",
+				"events": [
+					{"context": "SOUND", "action": "VOLUME_UP"}
+				]
+			}
+		]
+	},
+	{
+		"actions": ["VOLUME_DOWN"],
+		"commands": [
+			{
+				"type": "INFRARED",
+				"events": [
+					{"context": "SOUND", "action": "VOLUME_DOWN"}
+				]
+			}
+		]
+	}
+]

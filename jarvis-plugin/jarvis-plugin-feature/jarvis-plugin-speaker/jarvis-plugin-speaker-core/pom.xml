@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gguproject.jarvis</groupId>
+        <artifactId>jarvis-plugin-speaker</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jarvis-plugin-speaker-core</artifactId>
+    <packaging>jar</packaging>
+
+    <name>jarvis-plugin-speaker-core</name>
+
+    <properties>
+        <output.name>jarvis-plugin-speaker</output.name>
+
+        <marytts.version>5.2</marytts.version>
+        <marytts-voice-upmc-pierre.version>5.2</marytts-voice-upmc-pierre.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>Marytts</id>
+            <url>http://repo.spring.io/libs-release-remote/</url>
+        </repository>
+        <repository>
+            <id>Marytts2</id>
+            <url>http://oss.jfrog.org/artifactory/libs-release</url>
+        </repository>
+        <repository>
+            <id>Marytts3</id>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-core-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-command-processor</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-speaker-api</artifactId>
+        </dependency>
+
+        <!-- Text to speech engine -->
+        <dependency>
+            <groupId>de.dfki.mary</groupId>
+            <artifactId>marytts-runtime</artifactId>
+            <version>${marytts.version}</version>
+            <!-- 				<exclusions> -->
+            <!-- 					<exclusion> -->
+            <!-- 						<groupId>log4j</groupId> -->
+            <!-- 						<artifactId>log4j</artifactId> -->
+            <!-- 					</exclusion> -->
+            <!-- 				</exclusions> -->
+        </dependency>
+        <dependency>
+            <groupId>de.dfki.mary</groupId>
+            <artifactId>marytts-lang-fr</artifactId>
+            <version>${marytts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.dfki.mary</groupId>
+            <artifactId>voice-cmu-slt-hsmm</artifactId>
+            <version>${marytts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.dfki.mary</groupId>
+            <artifactId>voice-upmc-pierre-hsmm</artifactId>
+            <version>${marytts-voice-upmc-pierre.version}</version>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>publish</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>make-data-assembly</id>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>com.gguproject.jarvis</groupId>
+                        <artifactId>jarvis-data-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-plugin-assembly</id>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

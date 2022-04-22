@@ -1,0 +1,20 @@
+{
+  "data": {
+  },
+  "actions": {
+    "SET": [
+      "mets"
+    ]
+  },
+  "contexts": [
+    {
+      "type": "NETFLIX",
+      "words": [
+        "netflix"
+      ],
+      "actions": [
+        "SET"
+      ]
+    }
+  ]
+}

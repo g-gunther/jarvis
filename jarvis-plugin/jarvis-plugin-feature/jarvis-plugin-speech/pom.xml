@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.gguproject.jarvis</groupId>
+		<artifactId>jarvis-plugin-feature</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>jarvis-plugin-speech</artifactId>
+	<packaging>pom</packaging>
+
+	<name>jarvis-plugin-speech</name>
+
+	<modules>
+		<module>jarvis-plugin-speech-api</module>
+		<module>jarvis-plugin-speech-command</module>
+		<module>jarvis-plugin-speech-listener</module>
+		<module>jarvis-plugin-speech-interpreter</module>
+		<module>jarvis-plugin-speech-deepspeech-core</module>
+		<module>jarvis-plugin-speech-google-core</module>
+	</modules>
+
+</project>

@@ -1,0 +1,47 @@
+[
+	{
+		"contexts": ["TV"],
+		"actions": ["START", "STOP"],
+		"commands": [
+			"irsend SEND_ONCE tv KEY_POWER",
+			"irsend SEND_ONCE sound KEY_POWER",
+			{
+				"type": "WaitCommandProcessor",
+				"duration" : 2000,
+				"command": "irsend SEND_ONCE sound KEY_TV"
+			}
+		]
+	}, {
+		"contexts": ["MUSIC"],
+		"actions": ["START"],
+		"commands": [
+			"irsend SEND_ONCE sound KEY_POWER",
+			"irsend SEND_ONCE sound KEY_MUSIQUE"
+		]
+	}, {
+		"contexts": ["MUSIC"],
+		"actions": ["STOP"],
+		"commands": ["irsend SEND_ONCE sound KEY_POWER"]
+	}, {
+		"contexts": ["TV", "MUSIC"],
+		"actions": ["MUTE", "UNMUTE"],
+		"commands": ["irsend SEND_ONCE sound KEY_MUTE"]
+	}, {
+		"contexts": ["TV", "MUSIC"],
+		"actions": ["VOLUME_UP"],
+		"commands": ["irsend SEND_ONCE sound KEY_VOLUMEDOWN"]
+	}, {
+		"contexts": ["TV", "MUSIC"],
+		"actions": ["VOLUME_DOWN"],
+		"commands": ["irsend SEND_ONCE sound KEY_VOLUMEUP"]
+	}, {
+		"contexts": ["MUSIC"],
+		"actions": ["SET"],
+		"commands": ["irsend SEND_ONCE sound KEY_MUSIC"]
+	}, {
+		"contexts": ["MUSIC"],
+		"actions": ["SET"],
+		"datas": ["tv"],
+		"commands": ["irsend SEND_ONCE sound KEY_TV"]
+	}
+]

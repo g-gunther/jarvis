@@ -1,0 +1,24 @@
+{
+  "actions": {
+  "STOP": [
+      "éteint",
+      "stop",
+      "arrête"
+    ],
+    "SET": [
+      "mets"
+    ]
+  },
+  "contexts": [
+    {
+      "type": "LIGHT",
+      "words": ["lumière"],
+      "actions": ["SET", "STOP"]
+    }, 
+    {
+      "type": "ALL",
+      "words": ["tout"],
+      "actions": ["STOP"]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+[
+	{
+		"context": "TV",
+		"action": "POWER",
+		"command": "irsend SEND_ONCE tv KEY_POWER"
+	},
+	{
+		"context": "SOUND",
+		"action": "POWER",
+		"command": "irsend SEND_ONCE sound KEY_POWER"
+	},
+	{
+		"context": "SOUND",
+		"action": "MUTE",
+		"command": "irsend SEND_ONCE sound KEY_MUTE"
+	},
+	{
+		"context": "SOUND",
+		"action": "VOLUME_UP",
+		"command": "irsend SEND_ONCE sound KEY_VOLUMEUP"
+	},
+	{
+		"context": "SOUND",
+		"action": "VOLUME_DOWN",
+		"command": "irsend SEND_ONCE sound KEY_VOLUMEDOWN"
+	}
+]

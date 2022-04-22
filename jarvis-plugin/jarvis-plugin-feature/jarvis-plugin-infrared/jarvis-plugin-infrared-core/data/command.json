@@ -1,0 +1,27 @@
+[
+	{
+		"context": "TV",
+		"action": "POWER",
+		"command": "ir-ctl -S rc6_0:0x0c -d /dev/lirc0"
+	},
+	{
+		"context": "SOUND",
+		"action": "POWER",
+		"command": "ir-ctl -d /dev/lirc0 --send=data/keycodes/samsung_soundbar/POWER.txt"
+	},
+	{
+		"context": "SOUND",
+		"action": "MUTE",
+		"command": "ir-ctl -d /dev/lirc0 --send=data/keycodes/samsung_soundbar/MUTE.txt"
+	},
+	{
+		"context": "SOUND",
+		"action": "VOLUME_UP",
+		"command": "ir-ctl -d /dev/lirc0 --send=data/keycodes/samsung_soundbar/VOLUME_UP.txt"
+	},
+	{
+		"context": "SOUND",
+		"action": "VOLUME_DOWN",
+		"command": "ir-ctl -d /dev/lirc0 --send=data/keycodes/samsung_soundbar/VOLUME_DOWN.txt"
+	}
+]

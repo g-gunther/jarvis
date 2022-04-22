@@ -1,0 +1,110 @@
+{
+  "data": {
+    "tv_channel": [
+      "bfm",
+      "bfmtv",
+      "c8",
+      "tf1",
+      "m6",
+      "w9",
+      "tmc",
+      "nrj12",
+      "arte",
+      "france2",
+      "france3",
+      "6ter",
+      "RMCdécouverte",
+      "gameone"
+    ],
+    "tv_number": [
+    	"un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix"
+    ]
+  },
+  "actions": {
+    "START": ["allume"],
+    "STOP": ["éteint", "stop", "arrête"],
+    "VOLUME_UP": ["monte son"],
+    "VOLUME_DOWN": ["baisse son"],
+    "MUTE": ["éteint son","coupe son"],
+    "UNMUTE": ["mets son"],
+    "SET": ["mets"],
+    "SAY": ["dis-moi"],
+    "GIVE": ["donne-moi"],
+    "DISPLAY": ["affiche"]
+  },
+  "localizations": {
+  	"LIVING": ["salon", "salle à manger"],
+  	"KITCHEN": ["cuisine"],
+  	"ROOM": ["chambre"]
+  },
+  "contexts": [
+  	{
+  		"type": "ALARM",
+  		"words": ["réveil", "alarme"],
+  		"actions": ["SET"]
+  	},
+  	{
+  		"type": "TIMER",
+  		"words": ["minuteur"],
+  		"actions": ["SET"]
+  	},
+  	{
+  		"type": "TIME",
+  		"words": ["l'heure"],
+  		"actions": ["SAY", "GIVE"]
+  	},
+  	{
+  		"type": "WEATHER",
+  		"words": ["météo"],
+  		"actions": ["DISPLAY"]
+  	},
+    {
+      "type": "TV",
+      "words": ["télé", "télévision", "tv"],
+      "actions": [
+        "START",
+        "STOP",
+        "VOLUME_UP",
+        "VOLUME_DOWN",
+        "MUTE",
+        "UNMUTE",
+        {
+          "action": "SET",
+          "data": ["tv_channel", "tv_number"]
+        }
+      ]
+    },
+    {
+      "type": "MUSIC",
+      "words": ["musique", "playlist"],
+      "actions": [
+        "START",
+        "STOP",
+        "VOLUME_UP",
+        "VOLUME_DOWN",
+        "MUTE",
+        "UNMUTE",
+        "SET"
+      ]
+    },
+    {
+      "type": "LIGHT",
+      "words": ["lumière"],
+      "actions": [
+        "STOP",
+        "START",
+        "SET"
+      ]
+    },
+    {
+      "type": "ALL",
+      "words": ["tout"],
+      "actions": ["STOP"]
+    },
+    {
+      "type": "SELF",
+      "words": ["toi"],
+      "actions": ["STOP"]
+    }
+  ]
+}

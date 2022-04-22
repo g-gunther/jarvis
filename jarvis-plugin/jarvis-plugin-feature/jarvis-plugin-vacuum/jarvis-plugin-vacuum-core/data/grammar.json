@@ -1,0 +1,29 @@
+{
+  "actions": {
+  "STOP": [
+      "éteint",
+      "stop",
+      "arrête"
+    ],
+    "SET": [
+      "mets"
+    ]
+  },
+  "contexts": [
+    {
+      "type": "VACCUM",
+      "words": ["aspirateur"],
+      "actions": ["SET", "STOP"]
+    }, 
+    {
+      "type": "TIMER",
+      "words": ["minuteur"],
+      "actions": ["SET", "STOP"]
+    },
+    {
+      "type": "ALL",
+      "words": ["tout"],
+      "actions": ["STOP"]
+    }
+  ]
+}

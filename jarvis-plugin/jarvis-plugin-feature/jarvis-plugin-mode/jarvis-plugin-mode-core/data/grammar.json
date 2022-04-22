@@ -1,0 +1,25 @@
+{
+  "actions": {
+  "STOP": [
+    "SET": [
+      "mets"
+    ]
+  },
+  "contexts": [
+    {
+      "type": "MODE",
+      "words": ["mode"],
+      "actions": ["SET"]
+    }, 
+    {
+      "type": "TIMER",
+      "words": ["minuteur"],
+      "actions": ["SET", "STOP"]
+    },
+    {
+      "type": "ALL",
+      "words": ["tout"],
+      "actions": ["STOP"]
+    }
+  ]
+}

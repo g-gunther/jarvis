@@ -1,0 +1,205 @@
+opening a connection to the CEC adapter...
+DEBUG:   [               5]	Broadcast (F): osd name set to 'Broadcast'
+DEBUG:   [               6]	Open - vc_cec initialised
+DEBUG:   [               6]	logical address changed to Free use (e)
+NOTICE:  [               6]	connection opened
+DEBUG:   [               8]	processor thread started
+DEBUG:   [               8]	<< Broadcast (F) -> TV (0): POLL
+DEBUG:   [               8]	initiator 'Broadcast' is not supported by the CEC adapter. using 'Free use' instead
+TRAFFIC: [               8]	<< e0
+DEBUG:   [              69]	>> POLL sent
+DEBUG:   [              70]	TV (0): device status changed into 'present'
+DEBUG:   [              70]	<< requesting vendor ID of 'TV' (0)
+TRAFFIC: [              70]	<< e0:8c
+TRAFFIC: [             254]	>> 0e:83
+TRAFFIC: [             503]	>> 0e:00:8c:00
+DEBUG:   [             503]	marking opcode 'give device vendor id' as unsupported feature for device 'TV'
+DEBUG:   [             503]	expected response received (87: device vendor id)
+NOTICE:  [             503]	registering new CEC client - v4.0.4
+DEBUG:   [             503]	detecting logical address for type 'recording device'
+DEBUG:   [             503]	trying logical address 'Recorder 1'
+DEBUG:   [             503]	<< Recorder 1 (1) -> Recorder 1 (1): POLL
+TRAFFIC: [             504]	<< 11
+TRAFFIC: [             776]	<< 11
+DEBUG:   [            1046]	>> POLL not sent
+DEBUG:   [            1046]	using logical address 'Recorder 1'
+DEBUG:   [            1046]	Recorder 1 (1): device status changed into 'handled by libCEC'
+DEBUG:   [            1046]	Recorder 1 (1): power status changed from 'unknown' to 'on'
+DEBUG:   [            1046]	Recorder 1 (1): vendor = Pulse Eight (001582)
+DEBUG:   [            1046]	Recorder 1 (1): CEC version 1.4
+DEBUG:   [            1046]	AllocateLogicalAddresses - device '0', type 'recording device', LA '1'
+DEBUG:   [            1048]	logical address changed to Recorder 1 (1)
+DEBUG:   [            1048]	Recorder 1 (1): osd name set to 'CECTester'
+DEBUG:   [            1048]	Recorder 1 (1): menu language set to 'eng'
+DEBUG:   [            1048]	GetPhysicalAddress - physical address = 1000
+DEBUG:   [            1048]	AutodetectPhysicalAddress - autodetected physical address '1000'
+DEBUG:   [            1048]	Recorder 1 (1): physical address changed from ffff to 1000
+DEBUG:   [            1048]	<< Recorder 1 (1) -> broadcast (F): physical address 1000
+TRAFFIC: [            1048]	<< 1f:84:10:00:01
+NOTICE:  [            1199]	CEC client registered: libCEC version = 4.0.4, client version = 4.0.4, firmware version = 1, logical address(es) = Recorder 1 (1) , physical address: 1.0.0.0, compiled on Linux-4.15.0-48-generic ... , features: P8_USB, DRM, P8_detect, randr, RPi, Exynos, AOCEC
+DEBUG:   [            1199]	<< Recorder 1 (1) -> TV (0): OSD name 'CECTester'
+TRAFFIC: [            1199]	<< 10:47:43:45:43:54:65:73:74:65:72
+DEBUG:   [            1500]	<< requesting power status of 'TV' (0)
+TRAFFIC: [            1500]	<< 10:8f
+TRAFFIC: [            1620]	>> 01:46
+DEBUG:   [            1621]	<< Recorder 1 (1) -> TV (0): OSD name 'CECTester'
+TRAFFIC: [            1621]	<< 10:47:43:45:43:54:65:73:74:65:72
+DEBUG:   [            1621]	>> TV (0) -> Recorder 1 (1): give osd name (46)
+WARNING: [            2191]	unhandled response received: opcode=47 initiator=1 destination=0 response=0
+TRAFFIC: [            2191]	>> 0f:86:10:00
+DEBUG:   [            2191]	>> TV (0) sets stream path to physical address 1000
+DEBUG:   [            2191]	making Recorder 1 (1) the active source
+DEBUG:   [            2192]	TV (0): power status changed from 'unknown' to 'in transition from standby to on'
+NOTICE:  [            2192]	>> source activated: Recorder 1 (1)
+DEBUG:   [            2192]	sending active source message for 'Recorder 1'
+DEBUG:   [            2192]	<< requesting vendor ID of 'TV' (0)
+DEBUG:   [            2192]	'give device vendor id' is marked as unsupported feature for device 'TV'
+NOTICE:  [            2192]	<< powering on 'TV' (0)
+TRAFFIC: [            2192]	<< 10:04
+DEBUG:   [            2192]	>> TV (0) -> Broadcast (F): set stream path (86)
+WARNING: [            2312]	unhandled response received: opcode=82 initiator=1 destination=f response=0
+NOTICE:  [            2372]	<< Recorder 1 (1) -> broadcast (F): active source (1000)
+TRAFFIC: [            2372]	<< 1f:82:10:00
+DEBUG:   [            2493]	<< Recorder 1 (1) -> TV (0): menu state 'activated'
+TRAFFIC: [            2493]	<< 10:8e:00
+DEBUG:   [            2620]	expected response not received (90: report power status)
+TRAFFIC: [            2621]	<< 10:8f
+TRAFFIC: [            2741]	>> 01:8f
+DEBUG:   [            2741]	<< Recorder 1 (1) -> TV (0): on
+TRAFFIC: [            2741]	<< 10:90:00
+DEBUG:   [            2741]	>> TV (0) -> Recorder 1 (1): give device power status (8F)
+TRAFFIC: [            2922]	>> 01:90:00
+DEBUG:   [            2922]	TV (0): power status changed from 'in transition from standby to on' to 'on'
+DEBUG:   [            2922]	>> TV (0) -> Recorder 1 (1): report power status (90)
+DEBUG:   [            2923]	expected response received (90: report power status)
+requesting CEC bus information ...
+DEBUG:   [            2923]	<< Recorder 1 (1) -> Recorder 2 (2): POLL
+TRAFFIC: [            2923]	<< 12
+WARNING: [            3012]	unhandled response received: opcode=90 initiator=1 destination=0 response=0
+TRAFFIC: [            3102]	<< 12
+DEBUG:   [            3193]	>> POLL not sent
+DEBUG:   [            3193]	Recorder 2 (2): device status changed into 'not present'
+DEBUG:   [            3193]	<< Recorder 1 (1) -> Tuner 1 (3): POLL
+TRAFFIC: [            3193]	<< 13
+TRAFFIC: [            3283]	<< 13
+TRAFFIC: [            3404]	>> 01:8f
+DEBUG:   [            3404]	<< Recorder 1 (1) -> TV (0): on
+TRAFFIC: [            3404]	<< 10:90:00
+DEBUG:   [            3404]	>> TV (0) -> Recorder 1 (1): give device power status (8F)
+DEBUG:   [            3404]	>> POLL not sent
+DEBUG:   [            3404]	Tuner 1 (3): device status changed into 'not present'
+DEBUG:   [            3495]	<< Recorder 1 (1) -> Playback 1 (4): POLL
+TRAFFIC: [            3495]	<< 14
+WARNING: [            3585]	unhandled response received: opcode=90 initiator=1 destination=0 response=0
+TRAFFIC: [            3675]	<< 14
+DEBUG:   [            3765]	>> POLL not sent
+DEBUG:   [            3765]	Playback 1 (4): device status changed into 'not present'
+DEBUG:   [            3765]	<< Recorder 1 (1) -> Audio (5): POLL
+TRAFFIC: [            3765]	<< 15
+TRAFFIC: [            3886]	<< 15
+DEBUG:   [            3976]	>> POLL not sent
+DEBUG:   [            3976]	Audio (5): device status changed into 'not present'
+DEBUG:   [            3977]	<< Recorder 1 (1) -> Tuner 2 (6): POLL
+TRAFFIC: [            3977]	<< 16
+TRAFFIC: [            4067]	<< 16
+DEBUG:   [            4158]	>> POLL not sent
+DEBUG:   [            4158]	Tuner 2 (6): device status changed into 'not present'
+DEBUG:   [            4158]	<< Recorder 1 (1) -> Tuner 3 (7): POLL
+TRAFFIC: [            4158]	<< 17
+TRAFFIC: [            4248]	<< 17
+DEBUG:   [            4339]	>> POLL not sent
+DEBUG:   [            4339]	Tuner 3 (7): device status changed into 'not present'
+DEBUG:   [            4339]	<< Recorder 1 (1) -> Playback 2 (8): POLL
+TRAFFIC: [            4339]	<< 18
+TRAFFIC: [            4430]	<< 18
+DEBUG:   [            4550]	>> POLL not sent
+DEBUG:   [            4550]	Playback 2 (8): device status changed into 'not present'
+DEBUG:   [            4551]	<< Recorder 1 (1) -> Recorder 3 (9): POLL
+TRAFFIC: [            4551]	<< 19
+TRAFFIC: [            4731]	>> 01:00:8e:00
+DEBUG:   [            4731]	marking opcode 'menu status' as unsupported feature for device 'TV'
+DEBUG:   [            4731]	>> TV (0) -> Recorder 1 (1): feature abort ( 0)
+TRAFFIC: [            4732]	<< 19
+DEBUG:   [            4822]	>> POLL not sent
+DEBUG:   [            4822]	Recorder 3 (9): device status changed into 'not present'
+DEBUG:   [            4822]	<< Recorder 1 (1) -> Tuner 4 (A): POLL
+TRAFFIC: [            4822]	<< 1a
+TRAFFIC: [            4973]	>> 01:90:00
+DEBUG:   [            4973]	>> TV (0) -> Recorder 1 (1): report power status (90)
+TRAFFIC: [            4975]	<< 1a
+DEBUG:   [            5065]	>> POLL not sent
+DEBUG:   [            5065]	Tuner 4 (A): device status changed into 'not present'
+DEBUG:   [            5065]	<< Recorder 1 (1) -> Playback 3 (B): POLL
+TRAFFIC: [            5066]	<< 1b
+TRAFFIC: [            5276]	>> 0f:32:66:72:65
+DEBUG:   [            5276]	TV (0): menu language set to 'fre'
+DEBUG:   [            5276]	>> TV (0) -> Broadcast (F): set menu language (32)
+TRAFFIC: [            5277]	<< 1b
+DEBUG:   [            5367]	>> POLL not sent
+DEBUG:   [            5367]	Playback 3 (B): device status changed into 'not present'
+DEBUG:   [            5368]	<< Recorder 1 (1) -> Reserved 1 (C): POLL
+TRAFFIC: [            5368]	<< 1c
+TRAFFIC: [            5518]	>> 01:c3
+DEBUG:   [            5518]	sending abort with opcode c3 and reason 'unrecognised opcode' to TV
+DEBUG:   [            5518]	<< transmitting abort message
+DEBUG:   [            5518]	>> TV (0) -> Recorder 1 (1): request ARC start (C3)
+TRAFFIC: [            5519]	<< 10:00:c3:00
+TRAFFIC: [            5670]	<< 1c
+WARNING: [            5790]	unhandled response received: opcode=0 initiator=1 destination=0 response=0
+DEBUG:   [            5880]	>> POLL not sent
+DEBUG:   [            5880]	Reserved 1 (C): device status changed into 'not present'
+DEBUG:   [            5880]	<< Recorder 1 (1) -> Reserved 2 (D): POLL
+TRAFFIC: [            5880]	<< 1d
+TRAFFIC: [            6001]	<< 1d
+DEBUG:   [            6091]	>> POLL not sent
+DEBUG:   [            6091]	Reserved 2 (D): device status changed into 'not present'
+DEBUG:   [            6091]	<< Recorder 1 (1) -> Free use (E): POLL
+TRAFFIC: [            6091]	<< 1e
+TRAFFIC: [            6182]	<< 1e
+DEBUG:   [            6303]	>> POLL not sent
+DEBUG:   [            6303]	Free use (E): device status changed into 'not present'
+DEBUG:   [            6303]	<< requesting vendor ID of 'TV' (0)
+DEBUG:   [            6303]	'give device vendor id' is marked as unsupported feature for device 'TV'
+DEBUG:   [            6303]	<< requesting vendor ID of 'TV' (0)
+DEBUG:   [            6303]	'give device vendor id' is marked as unsupported feature for device 'TV'
+DEBUG:   [            6303]	<< requesting CEC version of 'TV' (0)
+TRAFFIC: [            6303]	<< 10:9f
+TRAFFIC: [            6568]	>> 01:00:9f:00
+DEBUG:   [            6568]	marking opcode 'get cec version' as unsupported feature for device 'TV'
+DEBUG:   [            6568]	>> TV (0) -> Recorder 1 (1): feature abort ( 0)
+DEBUG:   [            6568]	expected response received (9E: cec version)
+CEC bus information
+===================
+device #0: TV
+address:       0.0.0.0
+active source: no
+vendor:        Unknown
+osd string:    TV
+CEC version:   unknown
+power status:  on
+language:      fre
+
+
+device #1: Recorder 1
+address:       1.0.0.0
+active source: yes
+vendor:        Pulse Eight
+osd string:    CECTester
+CEC version:   1.4
+power status:  on
+language:      eng
+
+
+currently active source: Recorder 1 (1)
+DEBUG:   [            6569]	unregistering all CEC clients
+NOTICE:  [            6569]	unregistering client: libCEC version = 4.0.4, client version = 4.0.4, firmware version = 1, logical address(es) = Recorder 1 (1) , physical address: 1.0.0.0, compiled on Linux-4.15.0-48-generic ... , features: P8_USB, DRM, P8_detect, randr, RPi, Exynos, AOCEC
+DEBUG:   [            6569]	Recorder 1 (1): power status changed from 'on' to 'unknown'
+DEBUG:   [            6569]	Recorder 1 (1): vendor = Unknown (000000)
+DEBUG:   [            6569]	Recorder 1 (1): CEC version unknown
+DEBUG:   [            6569]	Recorder 1 (1): osd name set to 'Recorder 1'
+DEBUG:   [            6569]	marking Recorder 1 (1) as inactive source
+DEBUG:   [            6569]	Recorder 1 (1): device status changed into 'unknown'
+DEBUG:   [            6569]	unregistering all CEC clients
+DEBUG:   [            7010]	UnregisterLogicalAddress - releasing previous logical address
+DEBUG:   [            7010]	logical address changed to Broadcast (f)
+pi@raspberrypi:~ $ 

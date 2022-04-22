@@ -1,0 +1,17 @@
+{
+  "actions": {
+  	"DISPLAY": ["affiche"]
+  },
+  "contexts": [
+    {
+      "type": "WEATHER",
+      "words": ["météo"],
+      "actions": ["DISPLAY"]
+    },
+    {
+      "type": "ALL",
+      "words": ["tout"],
+      "actions": ["STOP"]
+    }
+  ]
+}

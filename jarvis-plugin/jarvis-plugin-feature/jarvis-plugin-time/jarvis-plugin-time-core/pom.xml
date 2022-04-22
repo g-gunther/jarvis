@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gguproject.jarvis</groupId>
+        <artifactId>jarvis-plugin-time</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jarvis-plugin-time-core</artifactId>
+    <packaging>jar</packaging>
+
+    <name>jarvis-plugin-time-core</name>
+
+    <properties>
+        <output.name>jarvis-plugin-time</output.name>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-helper-sound</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-core-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-command-processor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-speaker-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-speech-listener</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-display-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-time-api</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>publish</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>make-data-assembly</id>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>com.gguproject.jarvis</groupId>
+                        <artifactId>jarvis-data-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-plugin-assembly</id>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

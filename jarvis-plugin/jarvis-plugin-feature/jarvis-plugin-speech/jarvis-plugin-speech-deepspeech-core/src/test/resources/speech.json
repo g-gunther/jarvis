@@ -1,0 +1,173 @@
+{
+  "keyword": "jarvis",
+  "data": {
+    "numbers": [
+      "un",
+      "deux",
+      "trois",
+      "quatre",
+      "cinq",
+      "six",
+      "sept",
+      "huit",
+      "neuf",
+      "zéro",
+      "dix",
+      "onze",
+      "douze",
+      "treize",
+      "quatorze",
+      "quinze",
+      "seize",
+      "dix-sept",
+      "dix-huit",
+      "dix-neuf",
+      "vingt"
+    ],
+    "tv_channel": [
+      "bfm",
+      "bfmtv",
+      "c8",
+      "tf1",
+      "m6",
+      "w9",
+      "tmc",
+      "nrj12",
+      "arte",
+      "france2",
+      "france3"
+    ],
+    "playlist": [
+      "fourre tout"
+    ],
+    "time_unit": [
+    	"minute",
+    	"heure"
+    ],
+    "tv": ["télé", "télévision", "tv"]
+  },
+  "actions": {
+    "START": [
+      "allume"
+    ],
+    "STOP": [
+      "éteint",
+      "stop",
+      "arrête"
+    ],
+    "VOLUME_UP": [
+      "monte son"
+    ],
+    "VOLUME_DOWN": [
+      "baisse son"
+    ],
+    "MUTE": [
+      "éteint son",
+      "coupe son"
+    ],
+    "UNMUTE": [
+      "remets son"
+    ],
+    "SET": [
+      "mets"
+    ]
+  },
+  "context": [
+    {
+      "type": "TV",
+      "words": [
+        "télé",
+        "télévision",
+        "tv"
+      ],
+      "actions": [
+        "START",
+        "STOP",
+        "VOLUME_UP",
+        "VOLUME_DOWN",
+        "MUTE",
+        "UNMUTE",
+        {
+          "action": "SET",
+          "data": [
+            "numbers",
+            "digits",
+            "tv_channel"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "MUSIC",
+      "words": [
+        "musique",
+        "playlist",
+        "son"
+      ],
+      "actions": [
+        {
+			"action": "START",
+			"data": ["tv"]
+		},
+        "STOP",
+        "VOLUME_UP",
+        "VOLUME_DOWN",
+        "MUTE",
+        "UNMUTE",
+        {
+			"action": "SET",
+			"data": ["playlist", "tv"]
+		}
+      ]
+    },
+    {
+      "type": "LIGHT",
+      "words": [
+        "lumière"
+      ],
+      "actions": [
+        "START",
+        "STOP",
+        "SET"
+      ]
+    },
+    {
+      "type": "SELF",
+      "words": [
+        "toi"
+      ],
+      "actions": [
+        "STOP"
+      ]
+    },
+    {
+      "type": "ALL",
+      "words": [
+        "tout"
+      ],
+      "actions": [
+        "STOP"
+      ]
+    }
+  ],
+  "noise": {
+    "determinant": ["la", "le", "les", "de", "dans", "du"]
+  },
+  "grammar": {
+    "data": "<data_numbers> [<data_time_units>] | <data_tv_channel> | <data_playlist> | <data_tv>",
+    "output": "[<keyword>] <actions> [<noise>] [<context>] [<noise>] [<data>] [<localization>]"
+  },
+  "localization": {
+    "values": {
+      "ROOM": [
+        "chambre"
+      ],
+      "LIVING": [
+        "salon"
+      ],
+      "KITCHEN": [
+        "cuisine"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+**/.project
+**/.classpath
+**/target/
+**/.settings/
+**/.DS_Store
+**/plugins/
+**/*.mry
+**/.idea
+**/*.iml
+**/*.log
+**/secret-data/
+jarvis-app/jarvis-app-dev/data
+jarvis-app/jarvis-app-loader/modules
+jarvis-app/jarvis-app-loader/plugins
+jarvis-app/jarvis-app-master/plugins

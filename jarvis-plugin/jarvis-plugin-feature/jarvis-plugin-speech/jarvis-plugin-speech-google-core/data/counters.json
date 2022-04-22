@@ -1,0 +1,10 @@
+{
+  "SPEECH_REQUEST": {
+    "period": "MONTH",
+    "max": 240,
+    "dateCounters": {
+      "2021-02-07": 5
+    },
+    "count": 5
+  }
+}

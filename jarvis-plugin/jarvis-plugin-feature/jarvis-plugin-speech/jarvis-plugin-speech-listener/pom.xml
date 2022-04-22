@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gguproject.jarvis</groupId>
+        <artifactId>jarvis-plugin-speech</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jarvis-plugin-speech-listener</artifactId>
+    <packaging>jar</packaging>
+
+    <name>jarvis-plugin-speech-listener</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-speech-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-speech-interpreter-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-speech-interpreter-fr</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-core-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-core-bus-base</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,5 @@
+#JSGF V1.0;
+grammar speech;
+<keyword> = jarvis;
+
+public <speech> = <keyword>;

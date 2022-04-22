@@ -1,0 +1,65 @@
+{
+	"keyword": "jarvis",
+	"data": {
+		"numbers" : ["un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "zéro", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"],
+		"tv_channel" : ["bfm", "bfmtv", "d8", "tf1", "m6", "w9", "tmc", "nrj12", "nt1", "arte", "france2", "france3", "d17"],
+		"playlist": ["test"]
+	},
+	"localization":{
+		"starters": ["de", "dans", "du"],
+		"values": {
+			"ROOM": ["chambre"],
+			"LIVING": ["salon"],
+			"KITCHEN": ["cuisine"]
+		} 
+	}, 
+	"actions": {
+		"START" : ["allume"],
+		"STOP" : ["éteint", "stop", "arrête"],
+		"VOLUME_UP" : ["monte son"],
+		"VOLUME_DOWN" : ["baisse son"],
+		"MUTE" : ["éteint son", "coupe son"],
+		"UNMUTE" : ["mets son"],
+		"SET" : ["mets"]
+	},
+	"context": [
+		{
+			"type" :"TV",
+			"words": ["télé", "télévision", "tv"],
+			"actions": ["START", "STOP", "VOLUME_UP", "VOLUME_DOWN", "MUTE", "UNMUTE", {
+				"action": "SET",
+				"data": ["digits", "numbers", "tv_channel"]
+			}]
+		},
+		{
+			"type": "MUSIC",
+			"words": ["musique"],
+			"actions": ["START", "STOP", "VOLUME_UP", "VOLUME_DOWN", "MUTE", "UNMUTE", {
+				"action": "SET",
+				"data": ["playlist"]
+			}]
+		},
+		{
+			"type": "LIGHT",
+			"words": ["lumière"],
+			"actions": ["START", "STOP", "SET"]
+		},
+		{
+			"type": "SELF",
+			"words": ["toi"],
+			"actions": ["STOP"]
+		},
+		{
+			"type": "ALL",
+			"words": ["tout"],
+			"actions": ["STOP"]
+		}
+	],
+	"noise": {
+		"determinant": ["la", "le", "les"]
+	},
+	"grammar": {
+		"data": "<numbers> [<time_units>] | <tv_channel>",
+		"output": "[<keyword>] <action> [<noise>] [<context>] [<noise>] [<data>] [<localization.starters>] [<localization>]"
+	}
+}

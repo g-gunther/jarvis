@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gguproject.jarvis</groupId>
+        <artifactId>jarvis-plugin-core-bus</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jarvis-plugin-core-bus-base</artifactId>
+    <packaging>jar</packaging>
+
+    <name>jarvis-plugin-core-bus-base</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-core-dependencies</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-core-bus-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gguproject.jarvis</groupId>
+            <artifactId>jarvis-plugin-core-logger</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
